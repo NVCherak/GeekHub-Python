@@ -1,0 +1,16 @@
+Вхідний список на 10000 елементів.
+______________________________________________________________
+Name algorithm         |  Calculation time | Sorted correctly |
+-----------------------|-------------------|------------------|
+selection_sort (int)   |  5.3008 seconds   |  yes             |
+selection_sort (float) |  6.1986 second    |  yes             |
+-----------------------|-------------------|------------------|
+insertion_sort (int)   |  4.9205 seconds   |  yes             |
+insertion_sort (float) |  5.5159 seconds   |  yes             |
+-----------------------|-------------------|------------------|
+bubble_sort (int)      |  18.5481 seconds  |  yes             |
+bubble_sort (float)    |  19.6115 seconds  |  yes             |
+-----------------------|-------------------|------------------|
+default_sort (int)     |  0.0298 seconds   |  yes             |
+default_sort (float)   |  0.0147 seconds   |  yes             |
+--------------------------------------------------------------
