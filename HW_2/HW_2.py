@@ -224,56 +224,64 @@ def get_simple_num(n = 1):
 
 """ 2 Функція розкладання числа на прості множники"""
 
-def simple_decomposition(number):
+def decompos_to_simple(number):
     multipliers = [] # Список множників
-    simpl = 1        # яке за рахунком просте число
+    idSimpl = 1     # яке за рахунком просте число
+    simpl = 2
+
     while number != 1:
         # доки число не дорівнює 1
-        if number % get_simple_num(simpl):
+        if number % simpl:
             # якщо число не ділиться націло на дане просте - беремо наступне
-            simpl += 1
+            idSimpl += 1
+            simpl = get_simple_num(idSimpl)
         else:
             # якщо ділиться націло - додаємо в список множників
-            multipliers.append(get_simple_num(simpl))
-            number /= get_simple_num(simpl)
+            multipliers.append(simpl)
+            number /= simpl
             # і ділимо число на "множник"
 
-        if number == get_simple_num(simpl):
+        if number == simpl:
             # якщо число, що ми розкладаємо дорівнює простому - додаємо в список множників
-            multipliers.append(get_simple_num(simpl))
+            multipliers.append(simpl)
             # і виходимо з циклу
             break
 
     return multipliers
 
-#simple_decomposition(280) -> [2, 2, 2, 5, 7]
-#simple_decomposition(2100) -> [2, 2, 3, 5, 5, 7]
-#simple_decomposition(12) -> [2, 2, 3]
+#decompos_to_simple(280) -> [2, 2, 2, 5, 7]
+#decompos_to_simple(2100) -> [2, 2, 3, 5, 5, 7]
+#decompos_to_simple(12) -> [2, 2, 3]
 
 """ 3 Функція знаходження найбільшого спільного дільника (НСД) двох чисел"""
 # НСД - англ. LCD - the largest common divider
 
-""" не дороблена(
 def LCD(a, b):
-    aLst = simple_decomposition(a)
-    bLst = simple_decomposition(b)
-    intersectionLst = []
-    i, j = 0, 0
+    aLst = decompos_to_simple(a) #розбиваємо перше число на прості множники
+    bLst = decompos_to_simple(b) #і друге також
+    intersectionLst = []         #перетин двох списків
+    lcd = 1     #найбільший спільний дільник
+    i = 0
 
-    while i < len(aLst):
-        while j < len(bLst):
+    while i < len(aLst) and len(bLst):
+        #цикл доки "і" в межах першого списку і другий список не пустий
+        for j in range(len(bLst)):
             if aLst[i] == bLst[j]:
-                intersectionLst.append(aLst[i])
-                j += 1
-                i += 1
-                continue
-            else:
-                i += 1
-                continue
+                #якщо едемент першого списку дорівнює ел. з другого
+                intersectionLst.append(bLst.pop(j))
+                #додаємо цей елемент в список перетину і видаляємо з другого списку
+                break
+        i += 1
 
-    print(intersectionLst)
+    for i in intersectionLst:
+        lcd *= i
+        #рахуємо НСД перемножуючи спільні множники
 
-LCD(12, 18)"""
+    return lcd
+
+#LCD(12, 18) -> 6
+#LCD(2100, 280) - > 140
+#LCD(49, 27) -> 1
 
 
 """№7. ну і традиційно -> калькулятор, повинна бути 1 ф-ція яка б приймала 3 аргументи - один з яких операція яку зробити! """
