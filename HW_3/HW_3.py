@@ -21,23 +21,24 @@ def selection_sort(lst):
     # sort function by choice
     idSwapEl = 0 # element identifier
     extend = len(lst)
+    newLst = list(lst)
 
     for i in range(extend):
         # the loop until "i" is less than the length of the list
-        minEl = lst[i] # minimal element of the array - current *
+        minEl = newLst[i] # minimal element of the array - current *
         for j in range(i+1, extend):
             # cycle from the current element to the end of the array
-            if minEl > lst[j]:
+            if minEl > newLst[j]:
                 # if the minimum element is greater than the checked
-                minEl = lst[j]
+                minEl = newLst[j]
                 # assign the checked item as the minimum
                 idSwapEl = j
                 # remember its index
-        lst[idSwapEl] = lst[i]
+        newLst[idSwapEl] = newLst[i]
         # exchange of the smallest item with the current*
-        lst[i] = minEl
+        newLst[i] = minEl
 
-    return lst
+    return newLst
 
 def insertion_sort(lst):
     # sorting function by insertion
@@ -62,22 +63,24 @@ def insertion_sort(lst):
 def bubble_sort(lst):
     # bubble sort function
     sizeLst = len(lst)-1 # the size of the list
+    newLst = list(lst)
 
     for i in range(sizeLst):
         # cycle to the penultimate element of the array
         for j in range(sizeLst):
             # cycle from beginning to end of the list
-            if lst[j] > lst[j+1]:
+            if newLst[j] > newLst[j+1]:
                 # if the current item is greater than the next
-                lst[j], lst[j+1] = lst[j+1], lst[j] # обмін елементів
+                newLst[j], newLst[j+1] = newLst[j+1], newLst[j] # обмін елементів
         sizeLst -= 1 # at the end of the array are the largest elements that need not be checked
 
-    return(lst)
+    return(newLst)
 
 def default_sort(lst):
-    lst.sort() # sort the array
+    newLst = list(lst)
+    newLst.sort() # sort the array
 
-    return lst
+    return newLst
 
 def testing(name_sort, firstLst, secondLst):
     print("------------------------|-----------------------|------------------|")
