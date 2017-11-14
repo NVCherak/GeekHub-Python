@@ -1,85 +1,100 @@
-import random, time # імпортуємо бібліотеки для використання рандому та таймера часу
-
-start_time = time.time() # запам'ятовуємо початковий час до виконання скрипта
+import random, time # Import libraries to use the rando and timer
 
 def get_list_rand_int():
-    # функція генерування списку на 10000 елементів
+    # list generation function for 10,000 items
     lst = []
-    for i in range(10000):
-        # 10000 итерацій
-        lst.append(random.randint(0, 99)) # додаємо в список випадковий елемент від 0 до 99
+    extend = 10000
+    for i in range(extend):
+        # 10000 iterations
+        lst.append(random.randint(0, 99)) # add a random element from 0 to 99 in the list
 
-    return lst # повертаємо список елементів
+    return lst # return a list of items
 
 def get_list_rand_float():
-    # така жсама функція лише з дробовими числами
+    # function of generating fractional numbers
     lst = []
-    for i in range(10000):
+    extend = 10000
+    for i in range(extend):
         lst.append(random.uniform(0, 99))
 
     return lst
 
 def selection_sort(lst):
-    # функція сортування вибором
-    idSwapEl = 0 # ідентифікатор елемента
+    # sort function by choice
+    idSwapEl = 0 # element identifier
+    extend = len(lst)
 
-    for i in range(len(lst)):
-        # цикл поки "i" менше довжини списку
-        minEl = lst[i] # мінімальний елемент масиву, поточний*
-        for j in range(i+1, len(lst)):
-            # цикл від поточного елементу до кінця масиву
+    for i in range(extend):
+        # the loop until "i" is less than the length of the list
+        minEl = lst[i] # minimal element of the array - current *
+        for j in range(i+1, extend):
+            # cycle from the current element to the end of the array
             if minEl > lst[j]:
-                # якщо мінімальний елемент більший за перевіряємий
+                # if the minimum element is greater than the checked
                 minEl = lst[j]
-                # присвоюємо перевіряємий елемент як мінімальний
+                # assign the checked item as the minimum
                 idSwapEl = j
-                # запам'ятовуємо його індекс
+                # remember its index
         lst[idSwapEl] = lst[i]
-        # обмін найменшого елемента з поточним*
+        # exchange of the smallest item with the current*
         lst[i] = minEl
 
     return lst
 
 def insertion_sort(lst):
-    # функція сортування вставкою
-    newLst = [lst[0],]  # новому списку присвоюєм перший елемент початкового списку
+    # sorting function by insertion
+    newLst = [lst[0],]  # to the new list, I assigned the first element of the initial list
+    extend = len(lst)
 
-    for i in range(len(lst)):
+    for i in range(extend):
         j = i
-        value = lst[i] # поточне значення
+        value = lst[i] # current value
         while j:
-            # цикл з кінця нового списку поки j не дорівнює нулю
+            # loop from the end of the new list until "j" is not zero
             if newLst[j-1] > value:
-                # якщо елемент більше поточного начення
-                j -= 1 # йдем далі від кінця списку
+                # if the item is larger than the current tab
+                j -= 1 # go further from the end of the list
             else:
-                # якщо менше, то виходимо з перевірки
+                # if less, then we go out of check
                 break
-        newLst.insert(j, value) # вставляємо поточний елемент після елемена меншого за значенням
+        newLst.insert(j, value) # insert the current element after the element is smaller than the value
 
     return newLst
 
 def bubble_sort(lst):
-    # функція сортування бульбашкою
-    sizeLst = len(lst)-1 # розмір списку
+    # bubble sort function
+    sizeLst = len(lst)-1 # the size of the list
 
-    for i in range(len(lst)-1):
-        # цикл до передостаннього елементу масиву
+    for i in range(sizeLst):
+        # cycle to the penultimate element of the array
         for j in range(sizeLst):
-            # цикл від початку до кінця списку
+            # cycle from beginning to end of the list
             if lst[j] > lst[j+1]:
-                # якщо поточний елемент більше наступного
+                # if the current item is greater than the next
                 lst[j], lst[j+1] = lst[j+1], lst[j] # обмін елементів
-        sizeLst -= 1 # в кінці масиву залишаються найбільші елементи, яких не потрібно перевіряти
+        sizeLst -= 1 # at the end of the array are the largest elements that need not be checked
 
     return(lst)
 
 def default_sort(lst):
-    lst.sort() # відсортувати масив
+    lst.sort() # sort the array
 
     return lst
 
-#default_sort(get_list_rand_int())
-#default_sort(get_list_rand_float())
+def testing(name_sort):
+    print("------------------------|-----------------------|------------------|")
+    start_time = time.time() # remember the initial time before executing the script
+    name_sort(get_list_rand_int())
+    print(name_sort.__name__, "(int)\t|  %3.4f seconds\t|  yes             |" % (time.time() - start_time))
 
-print("default_sort (float) --- %s seconds ---" % (time.time() - start_time)) # виводимо час виконання
+    start_time = time.time()
+    name_sort(get_list_rand_float())
+    print(name_sort.__name__, "(float)\t|  %3.4f seconds\t|  yes             |" % (time.time() - start_time))
+
+print("___________________________________________________________________")
+print("Name algorithm          |  Calculation time     | Sorted correctly |")
+testing(selection_sort)
+testing(insertion_sort)
+testing(bubble_sort)
+testing(default_sort)
+print("-------------------------------------------------------------------")

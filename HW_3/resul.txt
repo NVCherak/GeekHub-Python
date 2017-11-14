@@ -3,7 +3,7 @@ ______________________________________________________________
 Name algorithm         |  Calculation time | Sorted correctly |
 -----------------------|-------------------|------------------|
 selection_sort (int)   |  5.3008 seconds   |  yes             |
-selection_sort (float) |  6.1986 second    |  yes             |
+selection_sort (float) |  6.1986 seconds   |  yes             |
 -----------------------|-------------------|------------------|
 insertion_sort (int)   |  4.9205 seconds   |  yes             |
 insertion_sort (float) |  5.5159 seconds   |  yes             |
