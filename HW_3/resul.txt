@@ -2,15 +2,15 @@
 ___________________________________________________________________
 Name algorithm          |  Calculation time     | Sorted correctly |
 ------------------------|-----------------------|------------------|
-selection_sort (int)	|  5.4060 seconds	    |  yes             |
-selection_sort (float)	|  6.2227 seconds	    |  yes             |
+selection_sort (int)	|  5.4060 seconds	|  yes             |
+selection_sort (float)	|  6.2227 seconds	|  yes             |
 ------------------------|-----------------------|------------------|
-insertion_sort (int)	|  4.8511 seconds	    |  yes             |
-insertion_sort (float)	|  5.5865 seconds	    |  yes             |
+insertion_sort (int)	|  4.8511 seconds	|  yes             |
+insertion_sort (float)	|  5.5865 seconds	|  yes             |
 ------------------------|-----------------------|------------------|
-bubble_sort (int)	    |  18.8447 seconds	    |  yes             |
-bubble_sort (float)	    |  19.7817 seconds	    |  yes             |
+bubble_sort (int)	|  18.8447 seconds	|  yes             |
+bubble_sort (float)	|  19.7817 seconds	|  yes             |
 ------------------------|-----------------------|------------------|
-default_sort (int)	    |  0.0039 seconds	    |  yes             |
-default_sort (float)	|  0.0058 seconds	    |  yes             |
+default_sort (int)	|  0.0039 seconds	|  yes             |
+default_sort (float)	|  0.0058 seconds	|  yes             |
 -------------------------------------------------------------------
