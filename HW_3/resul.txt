@@ -1,16 +1,16 @@
 Вхідний список на 10000 елементів.
-______________________________________________________________
-Name algorithm         |  Calculation time | Sorted correctly |
------------------------|-------------------|------------------|
-selection_sort (int)   |  5.3008 seconds   |  yes             |
-selection_sort (float) |  6.1986 seconds   |  yes             |
------------------------|-------------------|------------------|
-insertion_sort (int)   |  4.9205 seconds   |  yes             |
-insertion_sort (float) |  5.5159 seconds   |  yes             |
------------------------|-------------------|------------------|
-bubble_sort (int)      |  18.5481 seconds  |  yes             |
-bubble_sort (float)    |  19.6115 seconds  |  yes             |
------------------------|-------------------|------------------|
-default_sort (int)     |  0.0298 seconds   |  yes             |
-default_sort (float)   |  0.0147 seconds   |  yes             |
---------------------------------------------------------------
+_______________________________________________________________
+Name algorithm          |  Calculation time | Sorted correctly |
+------------------------|-------------------|------------------|
+selection_sort (int)	|  5.2216 seconds	|  yes             |
+selection_sort (float)	|  6.1054 seconds	|  yes             |
+------------------------|-------------------|------------------|
+insertion_sort (int)	|  0.0053 seconds	|  yes             |
+insertion_sort (float)	|  0.0056 seconds	|  yes             |
+------------------------|-------------------|------------------|
+bubble_sort (int)	    |  8.8857 seconds	|  yes             |
+bubble_sort (float)	    |  9.9666 seconds	|  yes             |
+------------------------|-------------------|------------------|
+default_sort (int)	    |  0.0002 seconds	|  yes             |
+default_sort (float)	|  0.0006 seconds	|  yes             |
+---------------------------------------------------------------

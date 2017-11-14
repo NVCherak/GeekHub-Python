@@ -1,19 +1,17 @@
 import random, time # Import libraries to use the rando and timer
 
-def get_list_rand_int():
+def get_list_rand_int(extend):
     # list generation function for 10,000 items
     lst = []
-    extend = 10000
     for i in range(extend):
-        # 10000 iterations
+        # extend iterations
         lst.append(random.randint(0, 99)) # add a random element from 0 to 99 in the list
 
     return lst # return a list of items
 
-def get_list_rand_float():
+def get_list_rand_float(extend):
     # function of generating fractional numbers
     lst = []
-    extend = 10000
     for i in range(extend):
         lst.append(random.uniform(0, 99))
 
@@ -81,20 +79,24 @@ def default_sort(lst):
 
     return lst
 
-def testing(name_sort):
+def testing(name_sort, firstLst, secondLst):
     print("------------------------|-----------------------|------------------|")
     start_time = time.time() # remember the initial time before executing the script
-    name_sort(get_list_rand_int())
+    name_sort(firstLst)
     print(name_sort.__name__, "(int)\t|  %3.4f seconds\t|  yes             |" % (time.time() - start_time))
 
     start_time = time.time()
-    name_sort(get_list_rand_float())
+    name_sort(secondLst)
     print(name_sort.__name__, "(float)\t|  %3.4f seconds\t|  yes             |" % (time.time() - start_time))
+
+extend = 10000
+lstInt = get_list_rand_int(extend)
+lstFloat = get_list_rand_float(extend)
 
 print("___________________________________________________________________")
 print("Name algorithm          |  Calculation time     | Sorted correctly |")
-testing(selection_sort)
-testing(insertion_sort)
-testing(bubble_sort)
-testing(default_sort)
+testing(selection_sort, lstInt, lstFloat)
+testing(insertion_sort, lstInt, lstFloat)
+testing(bubble_sort, lstInt, lstFloat)
+testing(default_sort, lstInt, lstFloat)
 print("-------------------------------------------------------------------")
