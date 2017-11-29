@@ -1,0 +1,13 @@
+2017-11-29 05:46:33,738 - HW_5 - INFO - Program started
+2017-11-29 05:46:34,405 - HW_5 - INFO - Category: getting response to url: https://hacker-news.firebaseio.com/v0/jobstories.json?print=pretty
+2017-11-29 05:46:35,042 - HW_5 - INFO - Record: getting response to url: https://hacker-news.firebaseio.com/v0/item/15803590.json?print=pretty
+2017-11-29 05:46:35,678 - HW_5 - INFO - Record: getting response to url: https://hacker-news.firebaseio.com/v0/item/15802056.json?print=pretty
+2017-11-29 05:46:36,351 - HW_5 - INFO - Record: getting response to url: https://hacker-news.firebaseio.com/v0/item/15799823.json?print=pretty
+2017-11-29 05:46:37,032 - HW_5 - INFO - Record: getting response to url: https://hacker-news.firebaseio.com/v0/item/15796747.json?print=pretty
+2017-11-29 05:46:37,874 - HW_5 - INFO - Record: getting response to url: https://hacker-news.firebaseio.com/v0/item/15795344.json?print=pretty
+2017-11-29 05:46:38,535 - HW_5 - INFO - Record: getting response to url: https://hacker-news.firebaseio.com/v0/item/15794340.json?print=pretty
+2017-11-29 05:46:39,166 - HW_5 - INFO - Record: getting response to url: https://hacker-news.firebaseio.com/v0/item/15792986.json?print=pretty
+2017-11-29 05:46:39,805 - HW_5 - INFO - Record: getting response to url: https://hacker-news.firebaseio.com/v0/item/15790321.json?print=pretty
+2017-11-29 05:46:40,454 - HW_5 - INFO - Record: getting response to url: https://hacker-news.firebaseio.com/v0/item/15785237.json?print=pretty
+2017-11-29 05:46:40,463 - HW_5 - INFO - The records is written to the file
+2017-11-29 05:46:40,464 - HW_5 - INFO - The program has completed!
