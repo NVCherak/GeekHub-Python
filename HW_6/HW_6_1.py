@@ -1,24 +1,23 @@
 class Calc:
-    last_result = None # the last result of calculating
 
     def add(self, a, b):
     # method addition two operands
-        self.last_result = a + b # remember result
+        self._last_result = a + b # remember result
         return a + b
 
     def subtract(self, a, b):
     # method substraction two operands
-        self.last_result = a - b
+        self._last_result = a - b
         return a - b
 
     def multiply(self, a, b):
     # method multiplication two operands
-        self.last_result = a * b
+        self._last_result = a * b
         return a * b
 
     def divide(self, a, b):
     # method division two operands
-        self.last_result = a / b
+        self._last_result = a / b
         return a / b
 
 
